@@ -15,6 +15,7 @@ public class Koulu2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        int a = 1;
         // TODO code application logic here
     }
     
