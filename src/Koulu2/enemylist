@@ -1,0 +1,14 @@
+//this is list of selectable enemy types
+ 13                 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+ 14                 enemies.add(new Enemy("orkboy"));
+ 15                 enemies.add(new Enemy("stormboy"));
+ 16                 enemies.add(new Enemy("orknob"));
+ 17                 enemies.add(new Enemy("guardsman"));
+ 18                 enemies.add(new Enemy("servitor"));
+ 19                 enemies.add(new Enemy("ogryn"));
+ 20                 
+ 21                 //print all selectable enemy types
+ 22                 for(Enemy i : enemies) {
+ 23                         System.out.println(i.getName());
+ 24                 }
+
