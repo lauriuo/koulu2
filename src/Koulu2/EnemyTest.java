@@ -8,8 +8,8 @@ public class EnemyTest {
 		int armor;
 		int damage;
 		int ap;
-		int enemynum;
-
+	
+               
 		//this is list of selectable enemy types
 		ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 		enemies.add(new Enemy("orkboy"));
@@ -18,35 +18,15 @@ public class EnemyTest {
 		enemies.add(new Enemy("guardsman"));
 		enemies.add(new Enemy("servitor"));
 		enemies.add(new Enemy("ogryn")); 
+                
+                
 
 		//print all selectable enemy types
 		for(Enemy i : enemies) {
 			System.out.println("[" + (1 + enemies.indexOf(i)) + "] " + i.getName());
 		}
-		/*
-		switch(int){
-			case 0:
-				selected.add(new Enemy("orkboy"));
-				break;
-			case 1:
-				selected.add(new enemy("stormboy"));
-				break;
-			case 2:
-				selected.add(new enemy("orknob"));
-				break;
-			case 3:
-				selected.add(new enemy("guardsman"));
-				break;
-			case 4:
-				selected.add(new enemy("servitor"));
-		          		break;
-			case 5:
-				selected.add(new enemy("ogryn"));
-				break;
-			}
-			*/
-
-	 	
+		
+                
 		// Test ready-made list of enemies.	
 		ArrayList<Enemy> selected = new ArrayList<Enemy>();
 		selected.add(new Enemy("stormboy"));
@@ -65,43 +45,34 @@ public class EnemyTest {
 			damage = input.nextInt();
 			System.out.println("How much AP");
 			ap = input.nextInt();
+                        
 			armor = chosen.getArmor() - ap;
+                        
 			if(armor<0) {
 				armor = 0;
+                               
 			}
+                        System.out.println("armor = " + armor);
 			damage = damage - armor;
+                        int tb = chosen.getTb();
+                        System.out.println("TBonus is " + tb);
+                        damage = damage - chosen.getTb();
+                        //next line is debugging
+                        System.out.printf("Damage is %d \n", damage);
 			chosen.subWounds(damage);
+                        //debugging...
+                        
+                        
 			if(chosen.getWounds() <= 0) {
-					System.out.println(chosen.getName() + "died (" + chosen.getWounds() + ")" );
+					System.out.println(chosen.getName() + " died (" + chosen.getWounds() + ")" );
 				selected.remove(chosen);
 			}
 			
 		}
 		System.out.println("Battle over");
 
-		
-		
-		/*
-		Enemy stormBoy = new Enemy("stormboy");
-		System.out.println(stormBoy.getName() + " " + stormBoy.getWounds());
-		System.out.println("Enter damage");
-		damage = input.nextInt();
-		System.out.println("Enter AP");
-		ap = input.nextInt();
-
-		// calculate damage
-		armor = stormBoy.getArmor() - ap;
-		if(armor < 0) {
-			armor = 0;
-		}
-		damage = damage - armor;
-		// call method subWounds
-		stormBoy.subWounds(damage);
-		System.out.print(stormBoy.getName() + " " + stormBoy.getWounds());
-		*/
 	}
-}
-		
+}	
 	
 
 

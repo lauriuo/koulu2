@@ -59,11 +59,8 @@ public class Enemy {
 		
 	public void subWounds(int damage) {
 		//After taking damage, calculate current wounds
-		damage = damage - tb;
-		if (damage - tb < 0) {
-			damage = 0;
-		}
-		wounds -=  damage ;
+		
+		wounds = wounds - damage ;
 		//calculations work now without taking armor into account
 	}
 	public String getName() {
