@@ -12,28 +12,12 @@ public class EnemyTest {
                
 		//this is list of selectable enemy types
 		ArrayList<Enemy> enemies = new ArrayList<Enemy>();
-		enemies.add(new Enemy("orkboy"));
-		enemies.add(new Enemy("stormboy"));
-		enemies.add(new Enemy("orknob"));
-		enemies.add(new Enemy("guardsman"));
-		enemies.add(new Enemy("servitor"));
-		enemies.add(new Enemy("ogryn")); 
-                
-                List testList = new ArrayList();
-                testList.add("Orkboy");
-                testList.add("Orkboy");
-                testList.add("Servitor");
-                
-                System.out.println(testList);
-                
-                for( string a : testList) {
-                    
-                }
-                
-                
-                
-                
-                
+		enemies.add(new Enemy("Orkboy"));
+		enemies.add(new Enemy("Stormboy"));
+		enemies.add(new Enemy("Orknob"));
+		enemies.add(new Enemy("Guardsman"));
+		enemies.add(new Enemy("Servitor"));
+		enemies.add(new Enemy("Ogryn")); 
                 
                 
 
@@ -45,8 +29,8 @@ public class EnemyTest {
                 
 		// Test ready-made list of enemies.	
 		ArrayList<Enemy> selected = new ArrayList<Enemy>();
-		selected.add(new Enemy("stormboy"));
-		selected.add(new Enemy("servitor"));		
+		selected.add(new Enemy("Stormboy"));
+		selected.add(new Enemy("Servitor"));		
 		
 		
 		while(selected.size() > 0) {

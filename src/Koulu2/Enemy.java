@@ -11,37 +11,37 @@ public class Enemy {
 	public Enemy(String classname) {
 		name = classname;
 		switch(name) {
-			case "orkboy":
+			case "Orkboy":
 				name = "Orkboy";
 				wounds = 12;
 				tb = 6;
 				armor = 2;
 				break;
-			case "stormboy":
+			case "Stormboy":
 				name = "Stormboy";
 				wounds = 14;
 				tb = 6;
 				armor = 2;
 				break;
-			case "orknob":
+			case "Orknob":
 				name = "Orknob";
 				wounds = 25;
 				tb = 9;
 				armor = 2;
 				break;
-			case "guardsman":
+			case "Guardsman":
 				name = "Guardsman";
 				wounds = 10;
 				tb = 3;
 				armor = 4;
 				break;
-			case "servitor":
+			case "Servitor":
 				name = "Servitor";
 				wounds = 10;
 				tb = 4;
 				armor = 4;
 				break;
-			case "ogryn":
+			case "Ogryn":
 				name = "Ogryn";
 				wounds = 26;
 				tb = 7;
