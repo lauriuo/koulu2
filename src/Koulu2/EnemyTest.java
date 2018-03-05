@@ -19,6 +19,22 @@ public class EnemyTest {
 		enemies.add(new Enemy("servitor"));
 		enemies.add(new Enemy("ogryn")); 
                 
+                List testList = new ArrayList();
+                testList.add("Orkboy");
+                testList.add("Orkboy");
+                testList.add("Servitor");
+                
+                System.out.println(testList);
+                
+                for( string a : testList) {
+                    
+                }
+                
+                
+                
+                
+                
+                
                 
 
 		//print all selectable enemy types
