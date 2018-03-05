@@ -6,13 +6,6 @@ public class Enemy {
 	private int armor;
 	private String name;
 
-		
-	public Enemy() {
-		//In this test phase, only one kind of enemy is possible.
-		wounds = 12;
-		tb = 6;
-		armor = 2;
-	}
 	// constructor with class name given as string
 	// correct attributes are given based on class name
 	public Enemy(String classname) {
@@ -61,7 +54,7 @@ public class Enemy {
 		//After taking damage, calculate current wounds
 		
 		wounds = wounds - damage ;
-		//calculations work now without taking armor into account
+		
 	}
 	public String getName() {
 		return name;
