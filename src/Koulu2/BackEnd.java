@@ -20,7 +20,7 @@ public class BackEnd {
         return enemies;
     }
  
-    public void subDamage(Enemy chosen, int damage, int ap) {
+    public static void subDamage(Enemy chosen, int damage, int ap) {
         int armor = chosen.getArmor() - ap;
         if(armor < 0) {
             armor = 0;
@@ -32,11 +32,6 @@ public class BackEnd {
         
         chosen.subWounds(damage);
     }
-    
-    
+            
         
-     
-        
-        
-    }
 }
