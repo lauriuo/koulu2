@@ -26,12 +26,13 @@ public class UI {
         boolean flag=false;
         int num=0;
         
-        for (Enemy enemy : enemies) {
+        for (Enemy enemy : enemies) {           //Creates the status screen for the user.
+            
             status = status + index + ". " + enemy.getName() +
-            ", HP: " + enemy.getWounds() + System.lineSeparator();
+            "       HP: " + enemy.getWounds() + ", Armor: " + enemy.getArmor() + System.lineSeparator();
             index++;
         }
-        while(!flag) {
+        while(!flag) {                 
             try{
                 String chosen = JOptionPane.showInputDialog(null,
                                 status,
@@ -40,19 +41,19 @@ public class UI {
                 if(chosen == null || chosen.equals("")) {
                     int quit = JOptionPane.showConfirmDialog(null,
                                 "Do you really wish to quit?",
-                                "Do you really wish to quit?",
+                                "",
                                 JOptionPane.YES_NO_OPTION);
                     if(quit == JOptionPane.YES_OPTION) {
                         System.exit(0);
                     } else {
-                        return -1;
+                        return -1;      
                     }
                 } else {
                     num = Integer.parseInt(chosen);
                 }
                 
                 if(num >= 0 && num <= (enemies.size() - 1)) {
-                    flag = true;
+                    flag = true;                // if a proper index is given, we exit the flag while loop.
                 } else {
                     JOptionPane.showMessageDialog(null,
                                 "Choose an index between 0 - " + (enemies.size() - 1));
@@ -70,10 +71,10 @@ public class UI {
         try{
             String dmg = JOptionPane.showInputDialog(null,
                         "How much damage is done to " + enemies.get(index).getName() + 
-                                      "(" + enemies.get(index).getArmor() + " Armor)",
-                        "How much damage:");
+                                      " (" + enemies.get(index).getArmor() + " Armor)",
+                        "dmg:");
             
-            if(dmg == null) {
+            if(dmg == null) {             // Means that no damage value was input
                 return num;
             }
             num = Integer.parseInt(dmg);
@@ -89,8 +90,8 @@ public class UI {
         int apnum=0;
         try{
             String ap = JOptionPane.showInputDialog(null,
-                        "How much AP (Armor Penetration) do you have: ",
-                        "how much AP: ");
+                        "How much AP (Armor penetration) do you have: ",
+                        "AP: ");
             apnum = Integer.parseInt(ap);
             
         } catch(Exception e) {
@@ -98,5 +99,26 @@ public class UI {
             "Not a valid input");
         }
         return apnum;
+    }
+    public static boolean CheckIfDead(Enemy enemy) {
+        if(enemy.getWounds() <= 0){
+            return true;
+            } else {
+            return false;
+        }
+    }
+    public static void EnemyDied(Enemy enemy) {
+        JOptionPane.showMessageDialog(null,
+        "The enemy " + enemy.getName() + " has died.");
+    }
+    public static void BattleEnd() {            // Pops up when all the enemies are dead.
+        int yesno = JOptionPane.showConfirmDialog(null,
+                    "All the enemies are dead. Simulate a new battle?",
+                    "",
+                    JOptionPane.YES_NO_OPTION);
+        
+        if(yesno == JOptionPane.NO_OPTION) {
+            System.exit(0);
+        }
     }
 }
